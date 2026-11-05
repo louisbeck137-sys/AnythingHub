@@ -2,13 +2,13 @@
 
 * <a href="https://www.dos.games" target="_blank">
     dos.games
+<a href="https://www.dos.games.com" target="_blank">
+    dos.games.com
 </a>
 
 
 
 
-
-* [dos.games](dos.games)
 * [dos.games.com](dos.games.com)
 * [retrogames.onl](retrogames.onl)
 * [quiverlauncher.com](quiverlauncher.com)
