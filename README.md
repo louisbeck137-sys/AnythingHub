@@ -1,8 +1,8 @@
 # Games
 
-<button onclick="window.location.href='https://www.dos.games'">
+* <a href="https://www.dos.games" target="_blank">
     dos.games
-</button>
+</a>
 
 
 
