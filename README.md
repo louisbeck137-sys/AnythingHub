@@ -1,15 +1,14 @@
 # Games
 
-* <a href="https://www.dos.games" target="_blank">
+* <a href="https://dos.games" target="_blank">
     dos.games
-<a href="https://www.dos.games.com" target="_blank">
-    dos.games.com
-</a>
+* <a href="https://retro games.onl" target="_blank">
+    retrogames.onl
 
 
 
 
-* [dos.games.com](dos.games.com)
+
 * [retrogames.onl](retrogames.onl)
 * [quiverlauncher.com](quiverlauncher.com)
 * [vel.gg](vel.gg)
