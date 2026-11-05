@@ -8,6 +8,8 @@
     quiverlauncher
 * <a href="https://vel.gg" target="_blank">
     vel.gg
+* <a href="https://fiveplay.lol" target="_blank">
+    fiveplay
 
 
 # Tools
