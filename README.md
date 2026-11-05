@@ -4,19 +4,24 @@
     dos.games
 * <a href="https://retro games.onl" target="_blank">
     retrogames.onl
+* <a href="https://quiver launcher.com" target="_blank">
+    Quiverlauncher
+* <a href="https://vel.gg" target="_blank">
+    Vel.gg
 
-
-
-
-
-* [retrogames.onl](retrogames.onl)
-* [quiverlauncher.com](quiverlauncher.com)
-* [vel.gg](vel.gg)
 
 # Tools
 
-* [bloxelizer.com](bloxelizer.com)
+* <a href="https://bloxelizer.com" target="_blank">
+    bloxelizer
+
+
+
+
+
+
+
+
 
 * <a href="https://www.google.com" target="_blank">
-    Google
-</a>
+    Google 
