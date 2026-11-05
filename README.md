@@ -1,7 +1,7 @@
 # Games
 
 <button onclick="window.location.href='https://www.dos.games'">
-    Open Google
+    dos.games
 </button>
 
 
