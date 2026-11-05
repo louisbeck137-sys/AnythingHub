@@ -1,3 +1,6 @@
+⚠️ Some links may not be working anymore ⚠️
+
+
 # Games
 
 * <a href="https://dos.games" target="_blank">
