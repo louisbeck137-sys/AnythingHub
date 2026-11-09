@@ -28,6 +28,8 @@
     ashna.ai
 * <a href="https://unisynai.com" target="_blank">
     unisynai
+* <a href="geoaxis.ai" target="_blank">
+    geoaxis.ai
 
 
 # Tools
