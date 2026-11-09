@@ -32,6 +32,8 @@
     geoaxis.ai
 * <a href="arena.ai" target="_blank">
     arena.ai
+* <a href="genspark.ai" target="_blank">
+    genspark.ai
 
 
 # Tools
