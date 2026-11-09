@@ -20,6 +20,12 @@
 * <a href="https://https://rec0ded88.com/play-retro-video-games/" target="_blank">
     rec0ded88
 
+# AI
+
+* <a href="app.ashna.ai" target="_blank">
+    ashna ai
+
+
 
 # Tools
 
