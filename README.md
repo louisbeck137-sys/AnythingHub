@@ -30,6 +30,8 @@
     unisynai
 * <a href="geoaxis.ai" target="_blank">
     geoaxis.ai
+* <a href="arena.ai" target="_blank">
+    arena.ai
 
 
 # Tools
