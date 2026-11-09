@@ -3,48 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0a1020">
-<meta name="description" content="AnythingHub — a curated collection of games, AI, tools and media.">
-<title>AnythingHub</title>
+<meta name="theme-color" content="#080d18">
+<meta name="description" content="AnythingHub — one clean place to discover games, AI, tools and media across the web.">
+<title>AnythingHub — Discover more</title>
 <style>
-:root{color-scheme:dark;--bg:#0a1020;--panel:#121c30;--line:#263650;--text:#edf4ff;--muted:#9babc3;--blue:#75b5ff;--cyan:#65e0d2}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#173b65 0,transparent 38%),radial-gradient(ellipse at 90% 20%,#123b42 0,transparent 30%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
-.wrap{width:min(1120px,calc(100% - 36px));margin:auto}header{border-bottom:1px solid #ffffff14;padding:24px 0}.top{display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;font-size:1.3rem;letter-spacing:-.04em}.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#428fff,#56d8c9);color:#07111d;font-weight:950}.tag{color:var(--muted);font-size:.82rem;border:1px solid var(--line);border-radius:99px;padding:6px 11px}
-main{padding:54px 0 70px}.eyebrow{color:var(--cyan);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}h1{font-size:clamp(2.6rem,7vw,4.8rem);line-height:1.02;letter-spacing:-.065em;margin:12px 0 16px}h1 span{background:linear-gradient(90deg,#91c5ff,#6ce3d5);background-clip:text;color:transparent}.intro{max-width:650px;color:var(--muted);font-size:1.08rem;margin:0}.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:32px 0 25px}.search{flex:1 1 250px}.search input{width:100%;padding:13px 15px;background:#111c2e;border:1px solid var(--line);border-radius:12px;color:var(--text);font:inherit;outline:none}.search input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #75b5ff20}nav{display:flex;gap:7px;flex-wrap:wrap}nav button{background:#111c2e;color:var(--muted);border:1px solid var(--line);padding:9px 13px;border-radius:99px;font:600 .88rem system-ui;cursor:pointer}nav button[aria-pressed=true],nav button:hover{background:#1d3a60;color:white;border-color:#528dc8}.section-head{display:flex;justify-content:space-between;align-items:center;margin:26px 0 14px}h2{font-size:1.2rem;margin:0}.count{color:var(--muted);font-size:.82rem}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:14px}.card{display:flex;flex-direction:column;min-height:155px;padding:18px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#17263d,#111a2b);transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-3px);border-color:#609bd6}.card[hidden]{display:none}.cardtop{display:flex;justify-content:space-between;align-items:center}.glyph{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#29486b;color:#b8d9ff;font-weight:850}.arrow{color:#8ca4c2}.card h3{font-size:1.02rem;margin:14px 0 3px}.card p{font-size:.85rem;color:var(--muted);margin:0}.empty{display:none;text-align:center;color:var(--muted);padding:28px;border:1px dashed var(--line);border-radius:14px}footer{border-top:1px solid #ffffff14;color:var(--muted);font-size:.82rem;padding:22px 0 30px}footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:600px){main{padding-top:40px}.tag{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:14px;min-height:145px}}@media(max-width:370px){.grid{grid-template-columns:1fr}}
+:root{color-scheme:dark;--bg:#080d18;--panel:#0e1626;--panel2:#121d30;--line:#202e45;--text:#edf3ff;--muted:#8d9bb3;--blue:#76a9ff;--cyan:#69e2d0;--purple:#a78bfa}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 75% -15%,#1b3560 0,transparent 34%),radial-gradient(ellipse at 0 45%,#11243c 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{color:inherit}
+.layout{max-width:1480px;margin:auto;padding:0 34px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:34px}
+.sidebar{height:100vh;position:sticky;top:0;padding:28px 0 22px;border-right:1px solid #ffffff12;display:flex;flex-direction:column}
+.brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:850;letter-spacing:-.7px;padding:0 18px 35px}
+.logo{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(140deg,#7cb5ff,#7a77ed 65%,#5de0d0);color:#08111e;font-size:20px;font-weight:950;box-shadow:0 8px 28px #5d9eff38}
+.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;margin-top:1px}
+.nav-label{font-size:10px;color:#62718a;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;padding:0 18px;margin:5px 0 10px}
+.nav{display:grid;gap:5px}
+.nav button{border:1px solid transparent;background:transparent;color:#9ba9bf;text-align:left;padding:11px 13px;margin:0 8px;border-radius:11px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:.2s}
+.nav button:hover{background:#ffffff09;color:white}
+.nav button.active{background:linear-gradient(100deg,#23447780,#1b3150a6);border-color:#4775b544;color:#eaf2ff}
+.nav-icon{width:22px;text-align:center;font-size:16px}
+.sidebar-bottom{margin-top:auto;padding:18px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#14243a,#0d1524)}
+.sidebar-bottom strong{font-size:13px;display:block;margin-bottom:4px}
+.sidebar-bottom p{font-size:11px;color:var(--muted);margin:0}
+main{min-width:0;padding:26px 0 48px}
+.topbar{height:46px;display:flex;justify-content:space-between;align-items:center;margin-bottom:38px}
+.breadcrumb{color:var(--muted);font-size:13px}.breadcrumb b{color:#e7efff;font-weight:650}
+.status{display:flex;align-items:center;gap:8px;color:#9caac0;font-size:12px}
+.dot{width:7px;height:7px;background:#55d6a4;border-radius:50%;box-shadow:0 0 12px #55d6a4}
+.hero{position:relative;overflow:hidden;border:1px solid #6a91c633;border-radius:23px;padding:38px 40px;background:linear-gradient(112deg,#142b4b 0%,#172541 48%,#25234b 100%);min-height:260px;display:flex;align-items:center;margin-bottom:30px}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.hero:before{width:390px;height:390px;right:4%;top:-210px;border:1px solid #9bc4ff20;box-shadow:0 0 0 35px #9bc4ff08,0 0 0 75px #9bc4ff06}
+.hero:after{width:220px;height:220px;right:13%;bottom:-165px;background:#7c7df51c;filter:blur(4px)}
+.hero-copy{position:relative;z-index:1;max-width:640px}
+.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9dc4ff;font-weight:850;display:flex;align-items:center;gap:9px}
+.eyebrow:before{content:"";width:22px;height:1px;background:var(--cyan)}
+h1{font-size:clamp(36px,5vw,60px);line-height:1.02;letter-spacing:-2.7px;margin:16px 0 13px;font-weight:850}
+h1 span{background:linear-gradient(90deg,#a5c8ff,#7be5d6);color:transparent;background-clip:text}
+.hero p{max-width:490px;color:#b2c1d8;margin:0;font-size:14px}
+.hero-art{position:absolute;right:8%;top:50%;transform:translateY(-50%);width:205px;height:175px;display:grid;place-items:center;opacity:.9}
+.orbit{position:absolute;width:165px;height:165px;border:1px solid #a7c8ff4a;border-radius:50%;transform:rotate(-25deg) scaleY(.55)}
+.orbit.two{width:205px;height:205px;transform:rotate(55deg) scaleY(.42);border-color:#75e1d44a}
+.cube{width:76px;height:76px;border-radius:23px;background:linear-gradient(145deg,#9fc8ff,#7478e9 58%,#5bd7d1);display:grid;place-items:center;color:#101a31;font-size:34px;font-weight:950;box-shadow:0 20px 60px #5f91ff55;transform:rotate(-9deg)}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 25px}
+.search-wrap{position:relative;flex:1;max-width:440px}
+.search-wrap span{position:absolute;left:15px;top:10px;color:#7788a3;font-size:17px}
+.search{width:100%;height:43px;background:#0d1727;border:1px solid var(--line);border-radius:12px;padding:0 15px 0 43px;color:var(--text);outline:none;transition:.2s}
+.search::placeholder{color:#6f7e96}
+.search:focus{border-color:#6c9ff0;box-shadow:0 0 0 3px #6c9ff01c}
+.result-count{font-size:12px;color:var(--muted);white-space:nowrap}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin:29px 0 15px}
+.section-head h2{font-size:18px;letter-spacing:-.4px;margin:0}
+.section-head p{font-size:11px;color:var(--muted);margin:3px 0 0}
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:19px}
+.pill{border:1px solid var(--line);background:#0d1727;color:#95a4ba;padding:8px 13px;border-radius:9px;font-size:11px;font-weight:700;cursor:pointer;transition:.18s}
+.pill:hover{border-color:#597eae;color:white}
+.pill.active{background:#294c7d;border-color:#507fc0;color:#fff;box-shadow:0 5px 18px #285b9b25}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.card{--accent:#7caeff;position:relative;min-width:0;min-height:150px;padding:17px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#121e30,#0d1625);display:flex;flex-direction:column;transition:transform .2s,border-color .2s,background .2s;overflow:hidden}
+.card:before{content:"";position:absolute;width:100px;height:100px;border-radius:50%;right:-45px;top:-55px;background:var(--accent);opacity:.09;filter:blur(2px);transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent),transparent 45%);background:linear-gradient(145deg,#182840,#101a2b)}
+.card:hover:before{opacity:.2;transform:scale(1.4)}
+.card-top{display:flex;align-items:center;justify-content:space-between;position:relative}
+.app-icon{width:36px;height:36px;border-radius:11px;background:color-mix(in srgb,var(--accent),#0b1422 78%);border:1px solid color-mix(in srgb,var(--accent),transparent 76%);display:grid;place-items:center;color:var(--accent);font-size:15px;font-weight:850}
+.external{color:#71839d;font-size:16px;transition:.2s}.card:hover .external{color:var(--accent);transform:translate(2px,-2px)}
+.card h3{font-size:14px;margin:15px 0 4px;letter-spacing:-.2px}
+.card p{font-size:11px;line-height:1.5;color:#91a0b6;margin:0;max-width:95%}
+.category{margin-top:auto;padding-top:15px;color:#72839d;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;font-weight:800}
+.empty{display:none;text-align:center;padding:42px 15px;border:1px dashed var(--line);border-radius:15px;color:var(--muted);font-size:13px}
+footer{border-top:1px solid #ffffff12;margin-top:38px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;color:#6f7f97;font-size:10px}
+footer strong{color:#aab9d0;font-weight:700}
+@media(max-width:1050px){.layout{grid-template-columns:190px minmax(0,1fr);gap:24px;padding:0 24px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-art{right:2%;opacity:.55}}
+@media(max-width:700px){.layout{display:block;padding:0 17px}.sidebar{height:auto;position:relative;border:0;padding:18px 0 0}.brand{padding:0 2px 15px}.sidebar .nav-label,.sidebar-bottom{display:none}.nav{display:flex;overflow:auto;padding-bottom:5px;gap:4px}.nav button{white-space:nowrap;margin:0;padding:9px 11px;font-size:11px}.nav-icon{width:auto}.nav button span:last-child{display:inline}main{padding-top:17px}.topbar{margin-bottom:19px;height:30px}.hero{padding:27px 23px;min-height:235px;margin-bottom:22px}.hero-art{right:-48px;opacity:.25}.hero-copy{max-width:100%}h1{font-size:43px}.toolbar{align-items:center}.search-wrap{max-width:none}.result-count{display:none}.grid{gap:10px}.card{min-height:145px;padding:14px}.card h3{font-size:13px}.card p{font-size:10px}.section-head{margin-top:25px}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.hero h1{font-size:38px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<header><div class="wrap top"><a class="brand" href="#"><span class="logo">A</span>AnythingHub</a><span class="tag">Your corner of the internet</span></div></header>
-<main class="wrap">
-<section><div class="eyebrow">Discover · Explore · Enjoy</div><h1>One hub.<br><span>Anything you need.</span></h1><p class="intro">A growing collection of useful websites for games, AI, everyday tools and media. Find something interesting and jump straight in.</p></section>
-<div class="toolbar"><label class="search"><input id="search" type="search" placeholder="Search websites…" aria-label="Search websites"></label><nav aria-label="Filter categories"><button data-filter="All" aria-pressed="true">All</button><button data-filter="Games" aria-pressed="false">Games</button><button data-filter="AI" aria-pressed="false">AI</button><button data-filter="Tools" aria-pressed="false">Tools</button><button data-filter="Media" aria-pressed="false">Media</button></nav></div>
-<div class="section-head"><h2 id="heading">Explore the collection</h2><span class="count" id="count" aria-live="polite"></span></div>
+<div class="layout">
+<aside class="sidebar">
+<a class="brand" href="#" aria-label="AnythingHub home"><span class="logo">A</span><span>AnythingHub<small>your web launchpad</small></span></a>
+<div class="nav-label">Workspace</div>
+<nav class="nav" aria-label="Main navigation">
+<button class="active" data-filter="All"><span class="nav-icon">⌂</span><span>Discover</span></button>
+<button data-filter="Games"><span class="nav-icon">▣</span><span>Games</span></button>
+<button data-filter="AI"><span class="nav-icon">✳</span><span>Artificial intelligence</span></button>
+<button data-filter="Tools"><span class="nav-icon">⌘</span><span>Tools</span></button>
+<button data-filter="Media"><span class="nav-icon">♫</span><span>Media</span></button>
+</nav>
+<div class="sidebar-bottom"><strong>A little bit of everything.</strong><p>A hand-picked collection of useful corners of the internet.</p></div>
+</aside>
+<main>
+<div class="topbar"><div class="breadcrumb">Workspace <span aria-hidden="true">/</span> <b id="crumb">Discover</b></div><div class="status"><span class="dot"></span> Your internet, organized</div></div>
+<section class="hero">
+<div class="hero-copy"><div class="eyebrow">The web, in one place</div><h1>Find your next<br><span>favorite thing.</span></h1><p>Explore a growing collection of games, AI, everyday tools and media. Less searching. More discovering.</p></div>
+<div class="hero-art" aria-hidden="true"><div class="orbit"></div><div class="orbit two"></div><div class="cube">A</div></div>
+</section>
+<div class="section-head"><div><h2>Explore the collection</h2><p>Useful websites picked to be one click away.</p></div></div>
+<div class="toolbar"><label class="search-wrap"><span>⌕</span><input class="search" id="search" type="search" placeholder="Search websites..." autocomplete="off" aria-label="Search websites"></label><div class="result-count" id="count" aria-live="polite"></div></div>
+<div class="pills" aria-label="Filter websites">
+<button class="pill active" data-filter="All">All websites</button><button class="pill" data-filter="Games">Games</button><button class="pill" data-filter="AI">AI</button><button class="pill" data-filter="Tools">Tools</button><button class="pill" data-filter="Media">Media</button>
+</div>
 <section class="grid" id="grid" aria-label="Website collection">
-<a class="card" data-category="Games" href="https://dos.games" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">D</span><span class="arrow">↗</span></div><h3>DOS Games</h3><p>Classic DOS games in your browser.</p></a>
-<a class="card" data-category="Games" href="https://retrogames.onl" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">R</span><span class="arrow">↗</span></div><h3>RetroGames</h3><p>A collection of retro browser games.</p></a>
-<a class="card" data-category="Games" href="https://vel.gg" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">V</span><span class="arrow">↗</span></div><h3>Vel</h3><p>Gaming website.</p></a>
-<a class="card" data-category="Games" href="https://fiveplay.lol" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">5</span><span class="arrow">↗</span></div><h3>Fiveplay</h3><p>Games and browser entertainment.</p></a>
-<a class="card" data-category="Games" href="https://arcadespace.org" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">A</span><span class="arrow">↗</span></div><h3>ArcadeSpace</h3><p>Arcade-style games online.</p></a>
-<a class="card" data-category="Games" href="https://nite.games" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">N</span><span class="arrow">↗</span></div><h3>Nite Games</h3><p>Online games.</p></a>
-<a class="card" data-category="Games" href="https://rec0ded88.com/play-retro-video-games/" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">8</span><span class="arrow">↗</span></div><h3>Rec0ded88</h3><p>Retro video game collection.</p></a>
-<a class="card" data-category="Games" href="https://ported2browser.org" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">P</span><span class="arrow">↗</span></div><h3>Ported2Browser</h3><p>Ported games for browser play.</p></a>
-<a class="card" data-category="AI" href="https://app.ashna.ai" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">A</span><span class="arrow">↗</span></div><h3>Ashna AI</h3><p>AI-powered assistant and tools.</p></a>
-<a class="card" data-category="AI" href="https://unisynai.com" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">U</span><span class="arrow">↗</span></div><h3>Unisyn AI</h3><p>AI platform.</p></a>
-<a class="card" data-category="AI" href="https://geoaxis.ai" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">G</span><span class="arrow">↗</span></div><h3>GeoAxis AI</h3><p>AI tools and services.</p></a>
-<a class="card" data-category="AI" href="https://arena.ai" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">✦</span><span class="arrow">↗</span></div><h3>Arena AI</h3><p>Explore and compare AI models.</p></a>
-<a class="card" data-category="AI" href="https://www.genspark.ai" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">G</span><span class="arrow">↗</span></div><h3>Genspark</h3><p>AI-powered search and productivity.</p></a>
-<a class="card" data-category="Tools" href="https://bloxelizer.com" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">B</span><span class="arrow">↗</span></div><h3>Bloxelizer</h3><p>Online tool.</p></a>
-<a class="card" data-category="Tools" href="https://www.google.com" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">G</span><span class="arrow">↗</span></div><h3>Google</h3><p>Search the web.</p></a>
-<a class="card" data-category="Media" href="https://royalbooks.com" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">R</span><span class="arrow">↗</span></div><h3>Royal Books</h3><p>Books and reading.</p></a>
-<a class="card" data-category="Media" href="https://radio.garden" target="_blank" rel="noopener noreferrer"><div class="cardtop"><span class="glyph">♫</span><span class="arrow">↗</span></div><h3>Radio Garden</h3><p>Radio stations from around the world.</p></a>
-</section><div class="empty" id="empty">No websites match your search.</div>
+<a class="card" style="--accent:#8eb8ff" data-category="Games" href="https://dos.games" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">D</span><span class="external">↗</span></div><h3>DOS Games</h3><p>Classic DOS games in your browser.</p><span class="category">Games</span></a>
+<a class="card" style="--accent:#e8b77d" data-category="Games" href="https://retrogames.onl" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">R</span><span class="external">↗</span></div><h3>RetroGames</h3><p>A collection of retro browser games.</p><span class="category">Games</span></a>
+<a class="card" style="--accent:#82aaff" data-category="Games" href="https://vel.gg" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">V</span><span class="external">↗</span></div><h3>Vel</h3><p>Gaming website.</p><span class="category">Games</span></a>
+<a class="card" style="--accent:#f1a4c4" data-category="Games" href="https://fiveplay.lol" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">5</span><span class="external">↗</span></div><h3>Fiveplay</h3><p>Games and browser entertainment.</p><span class="category">Games</span></a>
+<a class="card" style="--accent:#9aabff" data-category="Games" href="https://arcadespace.org" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">A</span><span class="external">↗</span></div><h3>ArcadeSpace</h3><p>Arcade-style games online.</p><span class="category">Games</span></a>
+<a class="card" style="--accent:#8ce0bd" data-category="Games" href="https://nite.games" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">N</span><span class="external">↗</span></div><h3>Nite Games</h3><p>Online games.</p><span class="category">Games</span></a>
+<a class="card" style="--accent:#e3b878" data-category="Games" href="https://rec0ded88.com/play-retro-video-games/" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">8</span><span class="external">↗</span></div><h3>Rec0ded88</h3><p>Retro video game collection.</p><span class="category">Games</span></a>
+<a class="card" style="--accent:#75d8d0" data-category="Games" href="https://ported2browser.org" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">P</span><span class="external">↗</span></div><h3>Ported2Browser</h3><p>Ported games for browser play.</p><span class="category">Games</span></a>
+<a class="card" style="--accent:#9d9bff" data-category="AI" href="https://app.ashna.ai" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">A</span><span class="external">↗</span></div><h3>Ashna AI</h3><p>AI-powered assistant and tools.</p><span class="category">AI</span></a>
+<a class="card" style="--accent:#7bdacb" data-category="AI" href="https://unisynai.com" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">U</span><span class="external">↗</span></div><h3>Unisyn AI</h3><p>AI platform.</p><span class="category">AI</span></a>
+<a class="card" style="--accent:#91b4ff" data-category="AI" href="https://geoaxis.ai" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">G</span><span class="external">↗</span></div><h3>GeoAxis AI</h3><p>AI tools and services.</p><span class="category">AI</span></a>
+<a class="card" style="--accent:#d4a4ff" data-category="AI" href="https://arena.ai" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">✳</span><span class="external">↗</span></div><h3>Arena AI</h3><p>Explore and compare AI models.</p><span class="category">AI</span></a>
+<a class="card" style="--accent:#83c9ff" data-category="AI" href="https://www.genspark.ai" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">G</span><span class="external">↗</span></div><h3>Genspark</h3><p>AI-powered search and productivity.</p><span class="category">AI</span></a>
+<a class="card" style="--accent:#f1a77f" data-category="Tools" href="https://bloxelizer.com" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">B</span><span class="external">↗</span></div><h3>Bloxelizer</h3><p>Online tool.</p><span class="category">Tools</span></a>
+<a class="card" style="--accent:#8eb8ff" data-category="Tools" href="https://www.google.com" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">G</span><span class="external">↗</span></div><h3>Google</h3><p>Search the web.</p><span class="category">Tools</span></a>
+<a class="card" style="--accent:#e9c28c" data-category="Media" href="https://royalbooks.com" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">R</span><span class="external">↗</span></div><h3>Royal Books</h3><p>Books and reading.</p><span class="category">Media</span></a>
+<a class="card" style="--accent:#80d7c4" data-category="Media" href="https://radio.garden" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="app-icon">♫</span><span class="external">↗</span></div><h3>Radio Garden</h3><p>Radio stations from around the world.</p><span class="category">Media</span></a>
+</section>
+<div class="empty" id="empty">No websites match your search. Try another name or category.</div>
+<footer><span>© <span id="year"></span> <strong>AnythingHub</strong></span><span>Made for discovering more of the web.</span></footer>
 </main>
-<footer><div class="wrap"><span>© <span id="year"></span> AnythingHub</span><span>A curated collection of links · More coming soon</span></div></footer>
+</div>
 <script>
-const search=document.getElementById('search'),cards=[...document.querySelectorAll('.card')],buttons=[...document.querySelectorAll('nav button')],count=document.getElementById('count'),empty=document.getElementById('empty'),heading=document.getElementById('heading');let active='All';
-function filterCards(){const q=search.value.trim().toLowerCase();let n=0;for(const card of cards){const show=(active==='All'||card.dataset.category===active)&&card.textContent.toLowerCase().includes(q);card.hidden=!show;if(show)n++}count.textContent=n+' '+(n===1?'website':'websites');empty.style.display=n?'none':'block';heading.textContent=active==='All'?'Explore the collection':active}
-buttons.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;buttons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));filterCards()}));search.addEventListener('input',filterCards);document.getElementById('year').textContent=new Date().getFullYear();filterCards();
+const search=document.getElementById('search');
+const cards=[...document.querySelectorAll('.card')];
+const filters=[...document.querySelectorAll('[data-filter]')];
+const count=document.getElementById('count');
+const empty=document.getElementById('empty');
+const crumb=document.getElementById('crumb');
+let active='All';
+function update(){
+ const query=search.value.trim().toLowerCase();
+ let visible=0;
+ for(const card of cards){
+  const matchCategory=active==='All'||card.dataset.category===active;
+  const matchText=card.textContent.toLowerCase().includes(query);
+  const show=matchCategory&&matchText;
+  card.hidden=!show;
+  if(show)visible++;
+ }
+ count.textContent=visible+' of '+cards.length+' websites';
+ empty.style.display=visible?'none':'block';
+ crumb.textContent=active==='All'?'Discover':active;
+}
+function setFilter(value){
+ active=value;
+ for(const button of filters){
+  const selected=button.dataset.filter===value;
+  button.classList.toggle('active',selected);
+  if(button.classList.contains('active')&&button.classList.contains('pill'))button.setAttribute('aria-pressed','true');
+  else if(button.classList.contains('pill'))button.setAttribute('aria-pressed','false');
+  if(button.closest('.nav'))button.classList.toggle('active',selected);
+ }
+ update();
+}
+filters.forEach(button=>button.addEventListener('click',()=>setFilter(button.dataset.filter)));
+search.addEventListener('input',update);
+document.getElementById('year').textContent=new Date().getFullYear();
+document.querySelectorAll('.pill').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.filter==='All')));
+update();
 </script>
 </body>
 </html>
