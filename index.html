@@ -15,6 +15,18 @@
 @media(max-width:700px){.shell{display:block}.sidebar{height:auto;position:relative;padding:15px 15px 0;border:0;border-bottom:1px solid var(--line)}.brand{padding:0 2px 12px}.nav-label,.side-bottom{display:none}.nav{display:flex;overflow:auto;padding-bottom:10px;gap:4px}.nav button{white-space:nowrap;margin:0;padding:8px 10px;font-size:10px}.nav-icon{width:auto}.side-footer{display:none}main{padding:17px 15px 32px}.topbar{margin-bottom:17px}.hero{padding:26px 21px;min-height:220px}.hero-art{right:-55px;opacity:.22}.hero h1{font-size:40px}.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured:last-child{display:none}.site-grid{gap:8px}.site-card{padding:11px;min-height:135px}.guides{grid-template-columns:1fr}.guide{display:grid;grid-template-columns:110px 1fr;gap:0 12px}.guide-visual{grid-row:span 3;height:100%;min-height:92px}.guide ol{margin-top:5px}.recent-list{grid-template-columns:1fr}.count{display:none}}
 @media(max-width:390px){.site-grid{grid-template-columns:1fr}.featured-grid{grid-template-columns:1fr}.featured:last-child{display:flex}.hero h1{font-size:35px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Consistent list layout across every tab */
+.site-grid{display:flex;flex-direction:column;gap:7px}
+.site-grid .site-card{min-height:0;padding:12px 15px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2px 14px;border-radius:9px}
+.site-grid .site-card .site-top{display:none}
+.site-grid .site-card h3{grid-column:1;margin:0;font-size:13px}
+.site-grid .site-card p{grid-column:1;margin:0;font-size:10px;color:var(--muted)}
+.site-grid .site-card .site-meta{display:none}
+.site-grid .site-card:after{content:attr(href);grid-column:1;grid-row:2;font-size:10px;color:var(--muted);overflow-wrap:anywhere}
+.site-grid .site-card.guide-entry:after{content:"GUIDE";grid-column:2;grid-row:1 / span 2;color:var(--blue);font-size:9px;font-weight:800;letter-spacing:1px}
+.site-grid .site-card.guide-entry{cursor:default}
+.site-grid .site-card.guide-entry:hover{transform:none}
 </style>
 </head>
 <body>
@@ -27,6 +39,7 @@
 <button data-category="AI"><span class="nav-icon">✳</span>AI</button>
 <button data-category="Tools"><span class="nav-icon">⌘</span>Tools</button>
 <button data-category="Media"><span class="nav-icon">♫</span>Media</button>
+<button data-category="Guides"><span class="nav-icon">☷</span>Guides</button>
 </nav>
 <div class="side-bottom"><div class="side-note"><strong>Your personal web directory</strong><p>Browse useful websites and open them directly.</p></div><div class="side-footer">AnythingHub · Curated for discovery</div></div>
 </aside>
@@ -52,8 +65,12 @@
 <a class="site-card" style="--accent:#8eb8ff" data-category="Tools" data-name="Google" href="https://www.google.com" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">G</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Google</h3><p>Search the web.</p><div class="site-meta"><span class="cat">Tools</span></div></a>
 <a class="site-card" style="--accent:#e9c28c" data-category="Media" data-name="Royal Books" href="https://royalbooks.com" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">R</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Royal Books</h3><p>Books and reading.</p><div class="site-meta"><span class="cat">Media</span></div></a>
 <a class="site-card" style="--accent:#80d7c4" data-category="Media" data-name="Radio Garden" href="https://radio.garden" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">♫</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Radio Garden</h3><p>Radio stations from around the world.</p><div class="site-meta"><span class="cat">Media</span><span class="new-tag">Featured</span></div></a>
+<div class="site-card guide-entry" data-category="Guides" data-name="Getting started"><h3>Getting started</h3><p>Choose a category in the sidebar. Select any website to open it in a new tab.</p></div>
+<div class="site-card guide-entry" data-category="Guides" data-name="Browse website lists"><h3>Browse website lists</h3><p>Games, AI, Tools and Media each show a simple list with the website name and its full address.</p></div>
+<div class="site-card guide-entry" data-category="Guides" data-name="Switch theme"><h3>Switch theme</h3><p>Use the sun or moon button in the top-right corner to switch between dark and light mode. Your choice is saved on this device.</p></div>
+<div class="site-card guide-entry" data-category="Guides" data-name="Use AnythingHub on mobile"><h3>Use AnythingHub on mobile</h3><p>Open the sidebar category you need, then tap a list entry. The directory adapts to smaller screens.</p></div>
 </div>
-<div class="empty" id="empty">No resources found. Try a different search or category.</div>
+<div class="empty" id="empty">No entries in this category yet.</div>
 </section>
 <footer><span>© <span id="year"></span> <strong>AnythingHub</strong></span><span>A curated collection of useful corners of the web.</span></footer>
 </main>
@@ -71,11 +88,11 @@ applyTheme(localStorage.getItem('anythinghub-theme')==='light'?'light':'dark');
 function update(){
  let visible=0;
  cards.forEach(card=>{const show=card.dataset.category===active;card.hidden=!show;if(show)visible++});
- count.textContent=visible+' websites';
+ count.textContent=visible+(active==='Guides'?' guides':' websites');
  empty.style.display=visible?'none':'block';
- title.textContent=active+' websites';
+ title.textContent=active;
  crumb.textContent=active;
- document.getElementById('siteGrid').classList.toggle('games-list',active==='Games');
+ document.getElementById('siteGrid').classList.add('games-list');
 }
 let active='Games';
 function setCategory(value){active=value;navButtons.forEach(b=>b.classList.toggle('active',b.dataset.category===value));update();document.getElementById('directory').scrollIntoView({behavior:'smooth',block:'start'})}
