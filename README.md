@@ -26,7 +26,8 @@
 
 * <a href="app.ashna.ai" target="_blank">
     ashna ai
-
+* <a href="https://unisynai.com" target="_blank">
+    unisynai
 
 
 # Tools
