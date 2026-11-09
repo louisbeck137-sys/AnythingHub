@@ -1,51 +1,33 @@
-⚠️ Some links may not be working anymore ⚠️
+# AnythingHub
 
+AnythingHub is a responsive, dark-themed directory of useful websites.
 
-# Games
+## Website
 
-* <a href="https://dos.games" target="_blank">
-    dos.games
-* <a href="https://retro games.onl" target="_blank">
-    retrogames
-* <a href="https://quiver launcher.com" target="_blank">
-    quiverlauncher
-* <a href="https://vel.gg" target="_blank">
-    vel.gg
-* <a href="https://fiveplay.lol" target="_blank">
-    fiveplay
-* <a href="https://arcadespace.org" target="_blank">
-    arcadespace
-* <a href="https://nite.games" target="_blank">
-    nite.games
-* <a href="https://https://rec0ded88.com/play-retro-video-games/" target="_blank">
-    rec0ded88
-* <a href="ported2broswer.org" target="_blank">
-    ported2broswer
+The site is a standalone static website. It uses plain HTML, CSS and JavaScript — no build tools, frameworks, dependencies or API keys are required.
 
-# AI
+### Features
 
-* <a href="app.ashna.ai" target="_blank">
-    ashna.ai
-* <a href="https://unisynai.com" target="_blank">
-    unisynai
-* <a href="geoaxis.ai" target="_blank">
-    geoaxis.ai
-* <a href="arena.ai" target="_blank">
-    arena.ai
-* <a href="www.genspark.ai" target="_blank">
-    genspark.ai
+- Responsive layout for desktop and mobile
+- Search across website names and descriptions
+- Category filters: Games, AI, Tools and Media
+- External links open in a new tab
+- Lightweight and fast; no tracking or backend
 
+## Run locally
 
-# Tools
+Open `index.html` in any modern browser.
 
-* <a href="https://bloxelizer.com" target="_blank">
-    bloxelizer
-* <a href="https://www.google.com" target="_blank">
-    
+## GitHub Pages
 
-# Movies/Series/Books/Radio
+To publish the site, open **Settings → Pages** in this repository and configure deployment from the `main` branch and `/(root)`. The published address will be:
 
-* <a href="https://royalbooks.com" target="_blank">
-    royalbooks
-* <a href="https://radio.garden" target="_blank">
-    radio.garden
+https://louisbeck137-sys.github.io/AnythingHub/
+
+## Contributing
+
+Add new website cards to the grid in `index.html`. Each card should include a `data-category` value of `Games`, `AI`, `Tools` or `Media`.
+
+---
+
+Made for quick access to useful corners of the web.
