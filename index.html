@@ -212,13 +212,13 @@
 const visitorCount=document.getElementById('visitor-count');
 (async()=>{
   try{
-    const counter=new Counter({workspace:'anythinghub-public'});
+    const counter=new Counter({workspace:'AnythingHub'});
     const result=await counter.up('site-visits');
     const total=result?.data?.up_count ?? result?.value;
-    if(!Number.isFinite(Number(total))) throw new Error('CounterAPI returned no count. Check that the workspace exists.');
+    if(!Number.isFinite(Number(total))) throw new Error('CounterAPI returned no count.');
     visitorCount.textContent=Number(total).toLocaleString();
   }catch(error){
-    visitorCount.textContent='Setup required';
+    visitorCount.textContent='Unavailable';
     console.error('Visitor counter failed:',error);
   }
 })();
