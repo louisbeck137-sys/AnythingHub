@@ -207,16 +207,16 @@
 <footer><span>© <span id="year"></span> <strong>AnythingHub</strong></span><span class="visitor-counter">Visitors: <strong id="visitor-count">Loading…</strong></span><span>A curated collection of useful corners of the web.</span></footer>
 </main>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
 <script>
 const visitorCount=document.getElementById('visitor-count');
 (async()=>{
   try{
-    const counter=new Counter({workspace:'AnythingHub'});
-    const result=await counter.up('site-visits');
-    const total=result?.data?.up_count ?? result?.value;
-    if(!Number.isFinite(Number(total))) throw new Error('CounterAPI returned no count.');
-    visitorCount.textContent=Number(total).toLocaleString();
+    const response=await fetch('https://anythinghub-counter.louis-beck137.workers.dev/',{method:'GET',cache:'no-store'});
+    if(!response.ok) throw new Error('Counter Worker returned HTTP '+response.status);
+    const data=await response.json();
+    const total=Number(data.visits);
+    if(!Number.isFinite(total)) throw new Error('Counter Worker returned no valid visit count.');
+    visitorCount.textContent=total.toLocaleString();
   }catch(error){
     visitorCount.textContent='Unavailable';
     console.error('Visitor counter failed:',error);
