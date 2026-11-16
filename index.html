@@ -89,8 +89,7 @@
     <span>GTA</span>
     <span class="quake-toggle" aria-hidden="true"></span>
   </summary>
-  <div class="quake-links">    <a href="https://wasmarcade.com/vice-city" target="_blank" rel="noopener noreferrer">GTA Vice City (https://wasmarcade.com/vice-city)</a>
-
+  <div class="quake-links">
     <a href="https://fiveplay.lol" target="_blank" rel="noopener noreferrer">GTA V (https://fiveplay.lol)</a>
   </div>
 </details>
@@ -205,11 +204,22 @@
 </div>
 <div class="empty" id="empty">No entries in this category yet.</div>
 </section>
-<footer><span>© <span id="year"></span> <strong>AnythingHub</strong></span><span class="visitor-counter">Visitors: <span class="counterapi" ns="louisbeck137-sys.github.io" action="view" key="anythinghub-visits" label="visits" noIcon="true" noLink="true">Loading…</span></span><span>A curated collection of useful corners of the web.</span></footer>
+<footer><span>© <span id="year"></span> <strong>AnythingHub</strong></span><span class="visitor-counter">Visitors: <strong id="visitor-count">Loading…</strong></span><span>A curated collection of useful corners of the web.</span></footer>
 </main>
 </div>
-<script src="https://counterapi.com/c.js?ns=louisbeck137-sys.github.io" async></script>
+<script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
 <script>
+const visitorCount=document.getElementById('visitor-count');
+(async()=>{
+  try{
+    const counter=new Counter({workspace:'anythinghub-public'});
+    const result=await counter.up('site-visits');
+    visitorCount.textContent=Number(result.value).toLocaleString();
+  }catch(error){
+    visitorCount.textContent='Unavailable';
+    console.error('Visitor counter failed:',error);
+  }
+})();
 const root=document.documentElement;
 const cards=[...document.querySelectorAll('.site-card')];
 const navButtons=[...document.querySelectorAll('.nav button')];
