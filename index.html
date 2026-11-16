@@ -218,7 +218,7 @@ const visitorCount=document.getElementById('visitor-count');
     if(!Number.isFinite(total)) throw new Error('Counter Worker returned no valid visit count.');
     visitorCount.textContent=total.toLocaleString();
   }catch(error){
-    visitorCount.textContent='Unavailable';
+    visitorCount.textContent='Error: '+String(error.message || error).slice(0,70);
     console.error('Visitor counter failed:',error);
   }
 })();
