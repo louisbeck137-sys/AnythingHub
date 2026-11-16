@@ -27,6 +27,17 @@
 .site-grid .site-card.guide-entry:after{content:"GUIDE";grid-column:2;grid-row:1 / span 2;color:var(--blue);font-size:9px;font-weight:800;letter-spacing:1px}
 .site-grid .site-card.guide-entry{cursor:default}
 .site-grid .site-card.guide-entry:hover{transform:none}
+
+.quake-group { display: block; cursor: pointer; }
+.quake-group summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.quake-group summary::-webkit-details-marker { display: none; }
+.quake-group .quake-toggle { font-size: 1.2rem; opacity: .75; }
+.quake-group .quake-toggle::before { content: "+"; }
+.quake-group[open] .quake-toggle::before { content: "−"; }
+.quake-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.quake-links a { display: inline-block; padding: 7px 11px; border-radius: 8px; background: rgba(255,255,255,.09); color: inherit; text-decoration: none; }
+.quake-links a:hover { background: rgba(255,255,255,.16); }
+
 </style>
 </head>
 <body>
@@ -56,6 +67,18 @@
 <a class="site-card" style="--accent:#8ce0bd" data-category="Games" data-name="Nite Games" href="https://nite.games" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">N</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Nite Games</h3><p>Online games.</p><div class="site-meta"><span class="cat">Games</span></div></a>
 <a class="site-card" style="--accent:#e3b878" data-category="Games" data-name="Rec0ded88" href="https://rec0ded88.com/play-retro-video-games/" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">8</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Rec0ded88</h3><p>Retro video game collection.</p><div class="site-meta"><span class="cat">Games</span></div></a>
 <a class="site-card" style="--accent:#75d8d0" data-category="Games" data-name="Ported2Browser" href="https://ported2browser.org" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">P</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Ported2Browser</h3><p>Ported games for browser play.</p><div class="site-meta"><span class="cat">Games</span></div></a>
+<details class="site-card quake-group" data-category="Games" data-name="Quake">
+  <summary>
+    <span>Quake</span>
+    <span class="quake-toggle" aria-hidden="true"></span>
+  </summary>
+  <div class="quake-links">
+    <a href="https://q1.pieter.com" target="_blank" rel="noopener noreferrer">Quake 1</a>
+    <a href="https://q2.pieter.com" target="_blank" rel="noopener noreferrer">Quake 2</a>
+    <a href="https://q3.pieter.com" target="_blank" rel="noopener noreferrer">Quake 3</a>
+  </div>
+</details>
+
 <a class="site-card" style="--accent:#9d9bff" data-category="AI" data-name="Ashna AI" href="https://app.ashna.ai" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">A</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Ashna AI</h3><p>AI-powered assistant and tools.</p><div class="site-meta"><span class="cat">AI</span></div></a>
 <a class="site-card" style="--accent:#7bdacb" data-category="AI" data-name="Unisyn AI" href="https://unisynai.com" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">U</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Unisyn AI</h3><p>AI platform.</p><div class="site-meta"><span class="cat">AI</span></div></a>
 <a class="site-card" style="--accent:#91b4ff" data-category="AI" data-name="GeoAxis AI" href="https://geoaxis.ai" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">G</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>GeoAxis AI</h3><p>AI tools and services.</p><div class="site-meta"><span class="cat">AI</span></div></a>
