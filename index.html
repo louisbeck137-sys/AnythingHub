@@ -214,9 +214,11 @@ const visitorCount=document.getElementById('visitor-count');
   try{
     const counter=new Counter({workspace:'anythinghub-public'});
     const result=await counter.up('site-visits');
-    visitorCount.textContent=Number(result.value).toLocaleString();
+    const total=result?.data?.up_count ?? result?.value;
+    if(!Number.isFinite(Number(total))) throw new Error('CounterAPI returned no count. Check that the workspace exists.');
+    visitorCount.textContent=Number(total).toLocaleString();
   }catch(error){
-    visitorCount.textContent='Unavailable';
+    visitorCount.textContent='Setup required';
     console.error('Visitor counter failed:',error);
   }
 })();
