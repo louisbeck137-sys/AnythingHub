@@ -28,15 +28,15 @@
 .site-grid .site-card.guide-entry{cursor:default}
 .site-grid .site-card.guide-entry:hover{transform:none}
 
-.quake-group { display: block; cursor: pointer; }
-.quake-group summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.quake-group summary::-webkit-details-marker { display: none; }
-.quake-group .quake-toggle { font-size: 1.2rem; opacity: .75; }
-.quake-group .quake-toggle::before { content: "+"; }
-.quake-group[open] .quake-toggle::before { content: "−"; }
-.quake-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.quake-links a { display: inline-block; padding: 7px 11px; border-radius: 8px; background: rgba(255,255,255,.09); color: inherit; text-decoration: none; }
-.quake-links a:hover { background: rgba(255,255,255,.16); }
+.quake-group { display:block; cursor:pointer; padding:10px 14px; }
+.quake-group summary { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12px; font-weight:750; }
+.quake-group summary::-webkit-details-marker { display:none; }
+.quake-group .quake-toggle { font-size:1rem; color:var(--muted); }
+.quake-group .quake-toggle::before { content:"+"; }
+.quake-group[open] .quake-toggle::before { content:"−"; }
+.quake-links { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; padding-top:8px; border-top:1px solid var(--line); }
+.quake-links a { display:inline-block; padding:4px 8px; border:1px solid var(--line); border-radius:6px; background:var(--surface2); color:var(--muted); font-size:10px; text-decoration:none; }
+.quake-links a:hover { color:var(--text); border-color:var(--blue); }
 
 </style>
 </head>
@@ -59,14 +59,6 @@
 <section class="section" id="directory">
 <div class="section-head"><div><h2 id="directoryTitle">Games</h2><p>Select a website to open it.</p></div><span class="count" id="count" aria-live="polite"></span></div>
 <div class="site-grid" id="siteGrid">
-<a class="site-card" style="--accent:#8eb8ff" data-category="Games" data-name="DOS Games" href="https://dos.games" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">D</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>DOS Games</h3><p>Classic DOS games in your browser.</p><div class="site-meta"><span class="cat">Games</span><span class="new-tag">Featured</span></div></a>
-<a class="site-card" style="--accent:#e8b77d" data-category="Games" data-name="RetroGames" href="https://retrogames.onl" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">R</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>RetroGames</h3><p>A collection of retro browser games.</p><div class="site-meta"><span class="cat">Games</span></div></a>
-<a class="site-card" style="--accent:#82aaff" data-category="Games" data-name="Vel" href="https://vel.gg" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">V</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Vel</h3><p>Gaming website.</p><div class="site-meta"><span class="cat">Games</span></div></a>
-<a class="site-card" style="--accent:#f1a4c4" data-category="Games" data-name="Fiveplay" href="https://fiveplay.lol" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">5</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Fiveplay</h3><p>Games and browser entertainment.</p><div class="site-meta"><span class="cat">Games</span></div></a>
-<a class="site-card" style="--accent:#9aabff" data-category="Games" data-name="ArcadeSpace" href="https://arcadespace.org" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">A</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>ArcadeSpace</h3><p>Arcade-style games online.</p><div class="site-meta"><span class="cat">Games</span></div></a>
-<a class="site-card" style="--accent:#8ce0bd" data-category="Games" data-name="Nite Games" href="https://nite.games" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">N</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Nite Games</h3><p>Online games.</p><div class="site-meta"><span class="cat">Games</span></div></a>
-<a class="site-card" style="--accent:#e3b878" data-category="Games" data-name="Rec0ded88" href="https://rec0ded88.com/play-retro-video-games/" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">8</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Rec0ded88</h3><p>Retro video game collection.</p><div class="site-meta"><span class="cat">Games</span></div></a>
-<a class="site-card" style="--accent:#75d8d0" data-category="Games" data-name="Ported2Browser" href="https://ported2browser.org" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">P</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Ported2Browser</h3><p>Ported games for browser play.</p><div class="site-meta"><span class="cat">Games</span></div></a>
 <details class="site-card quake-group" data-category="Games" data-name="Quake">
   <summary>
     <span>Quake</span>
@@ -78,6 +70,16 @@
     <a href="https://q3.pieter.com" target="_blank" rel="noopener noreferrer">Quake 3</a>
   </div>
 </details>
+
+<a class="site-card" style="--accent:#8eb8ff" data-category="Games" data-name="DOS Games" href="https://dos.games" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">D</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>DOS Games</h3><p>Classic DOS games in your browser.</p><div class="site-meta"><span class="cat">Games</span><span class="new-tag">Featured</span></div></a>
+<a class="site-card" style="--accent:#e8b77d" data-category="Games" data-name="RetroGames" href="https://retrogames.onl" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">R</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>RetroGames</h3><p>A collection of retro browser games.</p><div class="site-meta"><span class="cat">Games</span></div></a>
+<a class="site-card" style="--accent:#82aaff" data-category="Games" data-name="Vel" href="https://vel.gg" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">V</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Vel</h3><p>Gaming website.</p><div class="site-meta"><span class="cat">Games</span></div></a>
+<a class="site-card" style="--accent:#f1a4c4" data-category="Games" data-name="Fiveplay" href="https://fiveplay.lol" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">5</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Fiveplay</h3><p>Games and browser entertainment.</p><div class="site-meta"><span class="cat">Games</span></div></a>
+<a class="site-card" style="--accent:#9aabff" data-category="Games" data-name="ArcadeSpace" href="https://arcadespace.org" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">A</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>ArcadeSpace</h3><p>Arcade-style games online.</p><div class="site-meta"><span class="cat">Games</span></div></a>
+<a class="site-card" style="--accent:#8ce0bd" data-category="Games" data-name="Nite Games" href="https://nite.games" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">N</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Nite Games</h3><p>Online games.</p><div class="site-meta"><span class="cat">Games</span></div></a>
+<a class="site-card" style="--accent:#e3b878" data-category="Games" data-name="Rec0ded88" href="https://rec0ded88.com/play-retro-video-games/" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">8</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Rec0ded88</h3><p>Retro video game collection.</p><div class="site-meta"><span class="cat">Games</span></div></a>
+<a class="site-card" style="--accent:#75d8d0" data-category="Games" data-name="Ported2Browser" href="https://ported2browser.org" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">P</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Ported2Browser</h3><p>Ported games for browser play.</p><div class="site-meta"><span class="cat">Games</span></div></a>
+
 
 <a class="site-card" style="--accent:#9d9bff" data-category="AI" data-name="Ashna AI" href="https://app.ashna.ai" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">A</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Ashna AI</h3><p>AI-powered assistant and tools.</p><div class="site-meta"><span class="cat">AI</span></div></a>
 <a class="site-card" style="--accent:#7bdacb" data-category="AI" data-name="Unisyn AI" href="https://unisynai.com" target="_blank" rel="noopener noreferrer"><div class="site-top"><span class="site-icon">U</span><span class="site-actions"><span class="mini-btn">↗</span></span></div><h3>Unisyn AI</h3><p>AI platform.</p><div class="site-meta"><span class="cat">AI</span></div></a>
